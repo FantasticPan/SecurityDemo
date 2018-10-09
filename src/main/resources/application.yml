@@ -1,0 +1,13 @@
+server:
+  port: 9999
+spring:
+  datasource:
+      username: root
+      password: root
+      url: jdbc:mysql://127.0.0.1:3306/three_point
+      driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
