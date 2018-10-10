@@ -1,4 +1,4 @@
-package com.pan.security.config;
+package com.pan.security;
 
 import com.pan.service.impl.UserDetailsServiceImpl;
 import org.springframework.context.annotation.Bean;
