@@ -45,6 +45,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .passwordEncoder(passwordEncoder()); // 使用加密验证
     }
 
+    /**
+     * 不重写configure()的写法
+     * @param web
+     */
     //@Bean
     //public DaoAuthenticationProvider authenticationProvider() {
     //    DaoAuthenticationProvider authenticationProvider = new DaoAuthenticationProvider();

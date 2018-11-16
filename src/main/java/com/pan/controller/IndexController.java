@@ -19,8 +19,13 @@ public class IndexController {
 
     @Autowired
     private UserRepository userRepository;
+
+    //第一种写法
     @Autowired
     private PasswordEncoder passwordEncoder;
+
+    //第二种写法
+    //private PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
     @ResponseBody
     @RequestMapping("/personal_center")
@@ -33,5 +38,18 @@ public class IndexController {
     public void registry(User user) {
         System.out.println("注册成功");
         userRepository.save(new User(user.getUsername(), passwordEncoder.encode(user.getPassword())));
+    }
+
+    /**
+     * WebMvcConfig类等效内容
+     */
+    @RequestMapping("/sign_in")
+    public String sign_in() {
+        return "login";
+    }
+
+    @RequestMapping("/sign_up")
+    public String sign_up() {
+        return "registry";
     }
 }
